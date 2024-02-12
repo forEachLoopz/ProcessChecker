@@ -1,11 +1,13 @@
 import tkinter as tk
 from tkinter import messagebox, simpledialog
+from tkinter import *
 
 class ProcessCheckerApp:
     def __init__(self, master):
         self.master = master
         self.master.title("Process Checker")
-        self.master.geometry("560x480")
+        self.master.geometry("600x580")
+
 
         self.steps = [
             {"name": "Step 1", "validated": False},
@@ -24,15 +26,12 @@ class ProcessCheckerApp:
         self.step_label.pack(pady=10)
 
         button_style = {"font": ("Helvetica", 12), "width": 10, "height": 2, "bg": "#2ecc71", "fg": "white", "padx": 5, "pady": 5}
-
+        big_button_style = {"font": ("Helvetica", 12), "width": 20, "height": 5, "bg": "#2ecc71", "fg": "white", "padx": 5, "pady": 5}
         self.prev_button = tk.Button(self.master, text="Previous", command=self.goto_previous_step, **button_style)
         self.prev_button.pack(side="left", padx=(20, 10), pady=(0, 10))
 
         self.next_button = tk.Button(self.master, text="Next", command=self.goto_next_step, **button_style)
         self.next_button.pack(side="right", padx=(10, 20), pady=(0, 10))
-
-        self.validate_button = tk.Button(self.master, text="Validate Step", command=self.validate_step, **button_style)
-        self.validate_button.pack(side="bottom", pady=(0, 5))
 
         self.add_button = tk.Button(self.master, text="Add Step", command=self.add_step, **button_style)
         self.add_button.pack(side="bottom", pady=(0, 5))
@@ -42,6 +41,9 @@ class ProcessCheckerApp:
 
         self.edit_button = tk.Button(self.master, text="Edit Step", command=self.edit_step, **button_style)
         self.edit_button.pack(side="bottom", pady=(0, 5))
+
+        self.validate_button = tk.Button(self.master, text="Validate Step", command=self.validate_step, **big_button_style)
+        self.validate_button.pack(side="bottom", pady=(0, 5))
 
         self.step_frame = tk.Frame(self.master)
         self.step_frame.pack(pady=10, anchor="w")
