@@ -1,0 +1,1 @@
+[{'name': 'Step 1', 'validated': True}, {'name': 'Step 2', 'validated': False}, {'name': 'Step 3', 'validated': False}, {'name': 'Step 4', 'validated': False}, {'name': 'Step 5', 'validated': False}, {'name': 'Step 6', 'validated': False}]
